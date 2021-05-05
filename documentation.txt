@@ -1,0 +1,45 @@
+<<<install>>>
+
+open terminal
+
+
+install nodejs and npm on ubuntu
+
+$ sudo apt update
+$ sudo apt install nodejs
+$ sudo apt install npm
+
+good tutorial
+https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-18-04
+
+go to file directory.let say folder is webcam
+
+$ cd webcam
+
+install node_modules for nodejs server. required modules are in package.json
+
+$ npm install
+
+now all installed
+
+
+<<<run app>>>
+
+add ssl certificates path to server.js file line 10,11,12 . 
+you can get ssl files from sslforfree.org or any other free or paid website
+you will get 3 certificates files.put somewhere and add correct path in server.js line 10,11,12 . 
+
+
+change port if you need to use different port for nodejs server.
+look server.js file line no 2 . const HTTPS_PORT = 8432;
+i have set 8432. you can keep this port or use another.
+you also need to specify that port in index.php line no 69 . serverConnection = new WebSocket('wss://tspnetwork.com:8432');
+
+run nodejs server
+
+$ node server.js
+
+thats all
+now open index.php from web browser. 
+
+
